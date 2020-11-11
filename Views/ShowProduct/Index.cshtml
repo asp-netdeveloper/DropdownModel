@@ -1,0 +1,20 @@
+﻿@model Dropdownworking.ViewModels.ProductViewModel
+
+@{ 
+    ViewData["Title"] = "Index";
+} 
+
+<div class="col-md-4">
+    <form asp-controller="ShowProduct" asp-action="Index" method="post" role="form">
+        <div class="form-group">
+            <label asp-for="ProductId"></label>
+            <select asp-for="ProductId"
+                    class="form-control"
+                    asp-items="@(new SelectList(Model.Listofproducts, "Value", "Text"))">
+            </select>
+        </div>
+        <div class="form-group">
+            <input id="Submit1" class="btn btn-success" type="submit" value="submit" />
+        </div>
+    </form>
+</div>
